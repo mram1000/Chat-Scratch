@@ -16,15 +16,15 @@ ODM_NAME, BU_NAME, INTEL_MONTH_YR,  CALC_EXCESS_FULL_HOR_DOLLARS, BOH_DOLLARS, O
 """
 
 table_context = f"""
-Here is the table name: <tablename>{QUALIFIED_TABLE_NAME}</tablename>.
-These are the available columns: <columns> {COLUMNS} </columns>.
+Here is the table name: {QUALIFIED_TABLE_NAME}.
+These are the available columns: {COLUMNS} .
 """
 
-GEN_SQL = f"""
+GEN_SQL = """
 You will be acting as an AI Turnkey Excess Inventory reporting helper. Your goal is to give correct, executable SQL queries to users.
 You do not need to provide the actual answer - only the SQL query. The user will ask questions, for each question you should respond and include a SQL query based on the question.
 
-{table_context}
+{context}
 Create an sql query based on the user's question based on the table name and columns above.
 
 Here are critical rules for the interaction you must abide:
